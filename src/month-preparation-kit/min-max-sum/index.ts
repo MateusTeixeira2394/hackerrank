@@ -63,7 +63,7 @@ function selectionSort(arr: number[]): void {
 
 function miniMaxSum(arr: number[]): void {
     // Write your code here
-
+    
     let minSum: number = 0;
     let maxSum: number = 0;
 
@@ -73,19 +73,19 @@ function miniMaxSum(arr: number[]): void {
     // Sum the firts 4 elements and
     // the last 4 elements
     for (let i = 0; i < 4; i++) {
-
-        minSum = minSum + arr[i];
-        maxSum = maxSum + arr[arr.length - 1 - i]
+            
+            minSum = minSum + arr[i];
+            maxSum = maxSum + arr[arr.length-1-i]
     }
-
+    
     // log the response
-    console.log(minSum + ' ' + maxSum);
+    console.log(minSum+' '+maxSum);
 
 }
 
 export default function main() {
 
-    const arr: number[] = [1, 2, 3, 4, 5]
+    const arr: number[] = readLine().replace(/\s+$/g, '').split(' ').map(arrTemp => parseInt(arrTemp, 10));
 
     miniMaxSum(arr);
 }
