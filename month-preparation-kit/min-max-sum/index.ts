@@ -32,7 +32,7 @@ function getLowestPosition(arr: number[], firstIndex: number = 0): number {
 
     let lowestPosition: number = firstIndex;
 
-    for (let i = firstIndex; i < arr.length - 1; i++) {
+    for (let i = firstIndex; i < arr.length; i++) {
         if (arr[i] <= arr[lowestPosition]) {
             lowestPosition = i
         }
@@ -63,7 +63,7 @@ function selectionSort(arr: number[]): void {
 
 function miniMaxSum(arr: number[]): void {
     // Write your code here
-    
+
     let minSum: number = 0;
     let maxSum: number = 0;
 
@@ -73,20 +73,19 @@ function miniMaxSum(arr: number[]): void {
     // Sum the firts 4 elements and
     // the last 4 elements
     for (let i = 0; i < 4; i++) {
-            
-            minSum = minSum + arr[i];
-            maxSum = maxSum + arr[arr.length-1-i]
+
+        minSum = minSum + arr[i];
+        maxSum = maxSum + arr[arr.length - 1 - i]
     }
-    
+
     // log the response
-    console.log(minSum+' '+maxSum);
+    console.log(minSum + ' ' + maxSum);
 
 }
 
-export default function main() {
+function main() {
 
     const arr: number[] = readLine().replace(/\s+$/g, '').split(' ').map(arrTemp => parseInt(arrTemp, 10));
 
     miniMaxSum(arr);
 }
-
